@@ -2,7 +2,7 @@
   "name": "movie-app",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://zerico007.github.io/movie-app",
+  "homepage": "https://zerico007.github.io/vue-movie-app",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
