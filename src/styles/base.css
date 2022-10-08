@@ -8,7 +8,10 @@
   --black-soft: #222222;
   --black-mute: #282828;
 
-  --indigo: #2c3e50;
+  --main-green: #42b883;
+  --main-green-hovered: #27c47d;
+
+  --indigo: #213547;
 
   --divider-light-1: rgba(60, 60, 60, 0.29);
   --divider-light-2: rgba(60, 60, 60, 0.12);
@@ -18,7 +21,7 @@
   --text-light-1: var(--indigo);
   --text-light-2: rgba(60, 60, 60, 0.66);
   --text-dark-1: var(--white);
-  --text-dark-2: rgba(235, 235, 235, 0.64);
+  --text-dark-2: #aac8e4;
 }
 
 /* semantic color variables for this project */

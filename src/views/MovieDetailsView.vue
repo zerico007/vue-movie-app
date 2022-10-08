@@ -41,7 +41,6 @@ function returnHome() {
           {{ moviesStore.movieDetails?.title.runningTimeInMinutes }} minutes
         </p>
         <p>Plot: {{ moviesStore.movieDetails?.plotOutline.text }}</p>
-        <p>Genres:</p>
         <ul class="genres">
           <li v-for="genre in moviesStore.movieDetails?.genres" :key="genre">
             {{ genre }}
@@ -67,7 +66,7 @@ function returnHome() {
   width: 100%;
   margin-top: 2rem;
   padding: 1rem;
-  background: transparent;
+  background: var(--color-background-soft);
   color: var(--text-color);
   border-radius: 0.5rem;
 
@@ -85,7 +84,6 @@ function returnHome() {
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     h1 {
       margin: 0;
       font-size: 60px;
@@ -95,11 +93,17 @@ function returnHome() {
       font-size: large;
     }
     .genres {
-      display: flex;
       flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      display: inline-flex;
       li {
         margin: 0.5rem;
         padding: 0.25rem;
+        background: var(--color-background-soft);
+        color: var(--main-green);
+        border-radius: 0.3rem;
+        font-weight: bold;
       }
     }
   }

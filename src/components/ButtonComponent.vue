@@ -1,48 +1,55 @@
 <script setup lang="ts">
 export interface Props {
-  text: string;
+  text?: string;
   onClick: () => void;
   theme?: "primary" | "secondary";
   width?: string;
+  height?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: "primary",
   width: "100px",
+  height: "40px",
 });
 </script>
 <template>
-  <button :class="theme" @click="props.onClick" :style="{ width: props.width }">
+  <button
+    :class="theme"
+    @click="props.onClick"
+    :style="{ width: props.width, height: props.height }"
+  >
     {{ props.text }}
+    <slot />
   </button>
 </template>
 
 <style scoped lang="scss">
 button {
   padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
   border-radius: 0.25rem;
-  height: 40px;
+  border: none;
   outline: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
   &.primary {
-    background-color: #0f59a7;
-    color: #fff;
+    background-color: var(--main-green);
+    color: var(--indigo);
 
     &:hover {
-      background-color: #08376a;
+      background-color: var(--main-green-hovered);
     }
   }
   &.secondary {
-    background-color: #dde2e6;
-    color: #0f59a7;
-    border: 1px solid #0f59a7;
+    background-color: var(--color-background-soft);
+    color: var(--color-text);
+    border: none;
 
-    :hover {
-      background-color: #b8bec2;
+    &:hover {
+      background-color: var(--black-mute);
+      color: var(--text-dark-2);
     }
   }
 }

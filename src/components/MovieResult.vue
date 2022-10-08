@@ -1,6 +1,7 @@
 <!-- eslint-disable no-undef -->
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import Button from "./ButtonComponent.vue";
 
 const props = defineProps<{
   movie: Movie;
@@ -15,15 +16,17 @@ function navigateToMovie() {
 <template>
   <div class="movie-result">
     <div v-if="props.movie.image" class="movie-result__poster">
-      <img
-        :src="props.movie.image.url"
-        @click="navigateToMovie"
-        alt="movie poster"
-      />
+      <img :src="props.movie.image.url" alt="movie poster" />
     </div>
     <div class="movie-result__info">
       <h3>{{ props.movie.title }}</h3>
       <p>{{ props.movie.year }}</p>
+      <Button
+        text="View details"
+        :onClick="navigateToMovie"
+        width="100%"
+        height="32px"
+      />
     </div>
   </div>
 </template>
@@ -33,8 +36,8 @@ function navigateToMovie() {
   width: 300px;
   margin: 1rem auto;
   padding: 1rem;
-  background: rgba(255 255 255 / 0.5);
-  color: var(--black-soft);
+  background: var(--color-background-soft);
+  color: var(--color-text);
   border-radius: 0.5rem;
 
   &__poster {
@@ -43,7 +46,6 @@ function navigateToMovie() {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
     }
   }
 
@@ -57,7 +59,7 @@ function navigateToMovie() {
       margin: 0;
     }
     p {
-      margin: 0;
+      margin: 0 0 1rem 0;
     }
   }
 }

@@ -17,10 +17,15 @@ const handleSearchMovies = () => {
     <input
       type="text"
       @keyup.enter="handleSearchMovies"
-      placeholder="Search for a movie"
+      placeholder="Search for a movie..."
       v-model="searchQuery"
     />
-    <Button text="Search" :onClick="handleSearchMovies" />
+    <Button :onClick="handleSearchMovies" width="120px">
+      <div class="search-button-div">
+        <span>Search</span>
+        <vue-feather type="search" />
+      </div>
+    </Button>
   </div>
 </template>
 
@@ -36,9 +41,32 @@ const handleSearchMovies = () => {
     width: 70%;
     height: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
     border-radius: 0.25rem;
     margin-right: 1rem;
+    background-color: var(--color-background-soft);
+    border: none;
+    color: var(--color-text);
+    caret-color: var(--main-green);
+
+    &:focus {
+      outline: 2px solid var(--main-green);
+    }
+
+    &::placeholder {
+      color: var(--color-text);
+    }
+  }
+}
+
+.search-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  span {
+    font-weight: bolder;
   }
 }
 
