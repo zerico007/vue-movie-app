@@ -27,6 +27,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-transform: uppercase;
+  font-weight: bold;
   &.primary {
     background-color: #0f59a7;
     color: #fff;

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import SearchBar from "./components/SearchBar.vue";
-import MoviesContainer from "./components/MoviesContainer.vue";
+import { RouterView } from "vue-router";
 import Loader from "./components/LoaderComponent.vue";
 import { useMoviesStore } from "./stores";
 
@@ -9,8 +8,7 @@ const moviesStore = useMoviesStore();
 
 <template>
   <div class="app-container">
-    <SearchBar />
-    <MoviesContainer />
+    <RouterView />
     <Loader :active="moviesStore.loading" />
   </div>
 </template>

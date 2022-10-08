@@ -5,11 +5,13 @@ import RingLoader from "vue-spinner/src/RingLoader.vue";
 import App from "./App.vue";
 
 import "./styles/main.css";
+import router from "./router";
 
 const app = createApp(App);
 
 app.component("RingLoader", RingLoader);
 
 app.use(createPinia());
+app.use(router);
 
 app.mount("#app");
