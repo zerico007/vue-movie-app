@@ -76,6 +76,7 @@ function returnHome() {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 0.5rem;
     }
   }
 
@@ -86,7 +87,6 @@ function returnHome() {
     flex-direction: column;
     h1 {
       margin: 0;
-      font-size: 60px;
     }
     p {
       margin: 0.5rem 0;

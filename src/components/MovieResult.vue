@@ -46,6 +46,7 @@ function navigateToMovie() {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 0.5rem;
     }
   }
 
@@ -59,7 +60,7 @@ function navigateToMovie() {
       margin: 0;
     }
     p {
-      margin: 0 0 1rem 0;
+      margin: 0 0 auto 0;
     }
   }
 }
@@ -71,6 +72,13 @@ function navigateToMovie() {
     &__poster,
     &__info {
       width: 100%;
+      p {
+        margin-bottom: 2rem;
+      }
+      h3,
+      p {
+        text-align: center;
+      }
     }
   }
 }
