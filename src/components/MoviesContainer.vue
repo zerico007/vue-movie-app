@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import Movie from "./MovieResult.vue";
 import Button from "./ButtonComponent.vue";
+import Paginate from "./PaginateComponent.vue";
 import { useMoviesStore } from "../stores";
 
 const moviesStore = useMoviesStore();
 </script>
 <template>
-  <div v-if="moviesStore.movies.length > 0" class="movies-container">
-    <h2>Search Results</h2>
+  <div v-if="moviesStore.movies.results.length > 0" class="movies-container">
+    <h2>{{ moviesStore.movies.totalMatches }} Search Results</h2>
+    <Paginate />
     <Button text="Clear" :onClick="moviesStore.clearMovies" theme="secondary" />
     <div class="movies-container__results">
       <Movie
-        v-for="movie in moviesStore.movies"
+        v-for="movie in moviesStore.movies.results"
         :key="movie.id"
         :movie="movie"
       />

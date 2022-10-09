@@ -12,11 +12,16 @@ const headers = {
   "X-RapidAPI-Host": API_HOST,
 };
 
-export const searchMovies = async (query: string, limit: number) => {
+export const searchMovies = async (
+  query: string,
+  limit: number,
+  page: number
+) => {
   const { data } = await movieAPI.get("/v2/find", {
     params: {
       title: query,
       limit,
+      paginationKey: page.toString(),
     },
     headers,
   });

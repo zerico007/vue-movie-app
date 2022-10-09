@@ -20,7 +20,7 @@ function returnHome() {
 </script>
 <template>
   <div class="wrapper">
-    <Button :onClick="returnHome" theme="secondary" width="150px">
+    <Button :onClick="returnHome" theme="secondary" width="160px">
       <div class="return-home-btn btn-body">
         <vue-feather type="arrow-left" size="20px" />
         <span>Return Home</span>
@@ -40,7 +40,7 @@ function returnHome() {
           Runtime:
           {{ moviesStore.movieDetails?.title.runningTimeInMinutes }} minutes
         </p>
-        <p>Plot: {{ moviesStore.movieDetails?.plotOutline.text }}</p>
+        <p>Plot: {{ moviesStore.movieDetails?.plotOutline?.text }}</p>
         <ul class="genres">
           <li v-for="genre in moviesStore.movieDetails?.genres" :key="genre">
             {{ genre }}
