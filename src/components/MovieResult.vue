@@ -10,7 +10,7 @@ const props = defineProps<{
 const router = useRouter();
 
 function navigateToMovie() {
-  router.push(`/movies/${props.movie.id.split("/")[2]}`);
+  router.push(`/vue-movie-app/movies/${props.movie.id.split("/")[2]}`);
 }
 </script>
 <template>

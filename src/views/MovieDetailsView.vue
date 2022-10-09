@@ -14,7 +14,7 @@ onMounted(() => {
 });
 
 function returnHome() {
-  router.push("/");
+  router.push("/vue-movie-app");
   moviesStore.resetMovieDetails();
 }
 </script>

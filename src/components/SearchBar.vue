@@ -23,7 +23,7 @@ const handleSearchMovies = () => {
     <Button :onClick="handleSearchMovies" width="120px">
       <div class="search-button-div">
         <span>Search</span>
-        <vue-feather type="search" />
+        <vue-feather type="search" size="20px" />
       </div>
     </Button>
   </div>

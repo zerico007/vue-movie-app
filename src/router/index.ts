@@ -4,12 +4,12 @@ import Home from "../views/HomeView.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/vue-movie-app",
     name: "Home",
     component: Home,
   },
   {
-    path: "/movies/:id",
+    path: "/vue-movie-app/movies/:id",
     name: "MovieDetails",
     component: () => import("../views/MovieDetailsView.vue"),
   },
