@@ -10,8 +10,14 @@ export const useColorThemeStore = defineStore("colorTheme", () => {
 
   function loadDarkPreferenceFromLocalStorage() {
     const preference = localStorage.getItem("useDark");
+    const windowPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     if (preference) {
       useDark.value = preference === "true";
+      toggleDarkMode(preference === "true");
+    } else {
+      toggleDarkMode(windowPrefersDark);
     }
   }
 
