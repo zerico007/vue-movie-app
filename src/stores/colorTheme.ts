@@ -1,31 +1,42 @@
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import { defineStore } from "pinia";
 
 export const useColorThemeStore = defineStore("colorTheme", () => {
   const useDark = ref(false);
 
-  function saveDarkPreferenceToLocalStorage() {
-    localStorage.setItem("useDark", useDark.value.toString());
-  }
+  const windowPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  watch(useDark, (value) => {
+    localStorage.setItem("useDark", value.toString());
+    document.documentElement.classList.toggle("dark-mode", value);
+  });
 
   function loadDarkPreferenceFromLocalStorage() {
     const preference = localStorage.getItem("useDark");
-    const windowPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
     if (preference) {
       useDark.value = preference === "true";
       toggleDarkMode(preference === "true");
     } else {
-      toggleDarkMode(windowPrefersDark);
+      toggleDarkMode(windowPrefersDark.matches);
     }
   }
 
   function toggleDarkMode(state: boolean) {
-    document.documentElement.classList.toggle("dark-mode", state);
     useDark.value = state;
-    saveDarkPreferenceToLocalStorage();
   }
+
+  onMounted(() => {
+    loadDarkPreferenceFromLocalStorage();
+    windowPrefersDark.addEventListener("change", (e) => {
+      toggleDarkMode(e.matches);
+    });
+  });
+
+  onUnmounted(() => {
+    windowPrefersDark.removeEventListener("change", (e) => {
+      toggleDarkMode(e.matches);
+    });
+  });
 
   return {
     useDark,

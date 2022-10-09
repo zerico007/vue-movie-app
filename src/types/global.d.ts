@@ -63,3 +63,9 @@ interface MovieDetails {
 
 declare module "vue-spinner/src/RingLoader.vue";
 declare module "vue-select";
+
+declare module "*.vue" {
+  import type { DefineComponent } from "vue";
+  const component: DefineComponent<{}, {}, any>;
+  export default component;
+}
