@@ -21,7 +21,7 @@ const handleSearchMovies = () => {
       v-model="searchQuery"
     />
     <Button :onClick="handleSearchMovies" width="120px">
-      <div class="search-button-div">
+      <div class="search-button-div btn-body">
         <span>Search</span>
         <vue-feather type="search" size="20px" />
       </div>
@@ -37,6 +37,14 @@ const handleSearchMovies = () => {
   margin: 2rem auto;
   height: 40px;
   width: 400px;
+
+  .search-button-div:hover {
+    i {
+      transform: rotateZ(90deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
   input {
     width: 70%;
     height: 100%;
@@ -55,18 +63,6 @@ const handleSearchMovies = () => {
     &::placeholder {
       color: var(--color-text);
     }
-  }
-}
-
-.search-button-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-
-  span {
-    font-weight: bolder;
   }
 }
 

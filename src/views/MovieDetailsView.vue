@@ -20,12 +20,12 @@ function returnHome() {
 </script>
 <template>
   <div class="wrapper">
-    <Button
-      :onClick="returnHome"
-      text="Return Home"
-      theme="secondary"
-      width="200px"
-    />
+    <Button :onClick="returnHome" theme="secondary" width="150px">
+      <div class="return-home-btn btn-body">
+        <vue-feather type="arrow-left" size="20px" />
+        <span>Return Home</span>
+      </div>
+    </Button>
     <div v-if="moviesStore.movieDetails" class="movie-details-container">
       <div class="movie-details-container__poster">
         <img
@@ -60,6 +60,13 @@ function returnHome() {
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+
+  .return-home-btn:hover {
+    i {
+      transform: translateX(-5px);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
 }
 .movie-details-container {
   display: flex;
