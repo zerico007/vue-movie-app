@@ -23,12 +23,16 @@ const moviesStore = useMoviesStore();
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin: 2rem auto;
   &__results {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
   }
 }
 </style>

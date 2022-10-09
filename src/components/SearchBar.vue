@@ -40,7 +40,7 @@ const handleSearchMovies = () => {
   input {
     width: 70%;
     height: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     margin-right: 1rem;
     background-color: var(--color-background-soft);
@@ -72,10 +72,13 @@ const handleSearchMovies = () => {
 
 @media (max-width: 500px) {
   .search-bar {
-    width: 80%;
+    width: 90%;
+    height: auto;
     flex-direction: column;
     input {
       width: 100%;
+      height: 50px;
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
   }
