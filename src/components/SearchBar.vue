@@ -55,9 +55,11 @@ const handleSearchMovies = () => {
     border: none;
     color: var(--color-text);
     caret-color: var(--main-green);
+    font-size: 1rem;
 
     &:focus {
-      outline: 2px solid var(--main-green);
+      border: 2px solid var(--main-green);
+      outline: none;
     }
 
     &::placeholder {
@@ -74,7 +76,6 @@ const handleSearchMovies = () => {
     input {
       width: 100%;
       height: 50px;
-      font-size: 1rem;
       margin-bottom: 1rem;
     }
   }

@@ -32,11 +32,12 @@ button {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  font-weight: bolder;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1rem;
   &.primary {
     background-color: var(--main-green);
-    color: var(--indigo);
+    color: var(--primary-btn-text);
 
     &:hover {
       background-color: var(--main-green-hovered);
@@ -48,8 +49,7 @@ button {
     border: none;
 
     &:hover {
-      background-color: var(--black-mute);
-      color: var(--text-dark-2);
+      background-color: var(--secondary-btn-hovered-bg);
     }
   }
 }
