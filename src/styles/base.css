@@ -45,21 +45,19 @@
   --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--black);
-    --color-background-soft: var(--black-soft);
-    --color-background-mute: var(--black-mute);
+.dark-mode {
+  --color-background: var(--black);
+  --color-background-soft: var(--black-soft);
+  --color-background-mute: var(--black-mute);
 
-    --color-border: var(--divider-dark-2);
-    --color-border-hover: var(--divider-dark-1);
+  --color-border: var(--divider-dark-2);
+  --color-border-hover: var(--divider-dark-1);
 
-    --color-heading: var(--text-dark-1);
-    --color-text: var(--text-dark-2);
+  --color-heading: var(--text-dark-1);
+  --color-text: var(--text-dark-2);
 
-    --primary-btn-text: var(--indigo);
-    --secondary-btn-hovered-bg: var(--black-mute);
-  }
+  --primary-btn-text: var(--indigo);
+  --secondary-btn-hovered-bg: var(--black-mute);
 }
 
 *,
