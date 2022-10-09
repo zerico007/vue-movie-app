@@ -74,4 +74,10 @@ function goToLastPage() {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .paginate {
+    width: 100%;
+  }
+}
 </style>

@@ -4,7 +4,6 @@ import { useMoviesStore } from "../stores";
 import Button from "./ButtonComponent.vue";
 
 const searchQuery = ref("");
-
 const moviesStore = useMoviesStore();
 
 const handleSearchMovies = () => {
@@ -36,7 +35,7 @@ const handleSearchMovies = () => {
   align-items: center;
   margin: 2rem auto;
   height: 40px;
-  width: 400px;
+  width: 90%;
 
   .search-button-div:hover {
     i {
@@ -46,7 +45,7 @@ const handleSearchMovies = () => {
   }
 
   input {
-    width: 70%;
+    width: 50%;
     height: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -70,7 +69,6 @@ const handleSearchMovies = () => {
 
 @media (max-width: 500px) {
   .search-bar {
-    width: 90%;
     height: auto;
     flex-direction: column;
     input {

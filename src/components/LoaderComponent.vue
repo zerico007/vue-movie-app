@@ -5,7 +5,6 @@ const props = defineProps<{
 </script>
 <template>
   <div v-if="props.active" class="loader">
-    <h2>Loading...</h2>
     <ring-loader :loading="props.active" color="#3B82F6" size="60px" />
   </div>
 </template>

@@ -62,3 +62,4 @@ interface MovieDetails {
 }
 
 declare module "vue-spinner/src/RingLoader.vue";
+declare module "vue-select";

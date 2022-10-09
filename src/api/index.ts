@@ -15,13 +15,15 @@ const headers = {
 export const searchMovies = async (
   query: string,
   limit: number,
-  page: number
+  page: number,
+  genre?: string
 ) => {
   const { data } = await movieAPI.get("/v2/find", {
     params: {
       title: query,
       limit,
       paginationKey: page.toString(),
+      genre,
     },
     headers,
   });

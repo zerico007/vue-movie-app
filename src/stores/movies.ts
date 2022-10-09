@@ -20,8 +20,26 @@ const initialMovieState: MovieState = {
 
 export const useMoviesStore = defineStore("movies", () => {
   const movies = ref<MovieState>(initialMovieState);
+  const genre = ref("");
   const movieDetails = ref<MovieDetails | null>(null);
   const loading = ref(false);
+
+  const genres = [
+    "comedy",
+    "horror",
+    "romance",
+    "thriller",
+    "sci-fi",
+    "drama",
+    "action",
+    "adventure",
+    "crime",
+    "fantasy",
+    "history",
+    "musical",
+    "animation",
+    "family",
+  ];
 
   function clearMovies() {
     movies.value = initialMovieState;
@@ -31,13 +49,22 @@ export const useMoviesStore = defineStore("movies", () => {
     movieDetails.value = null;
   }
 
+  function setGenre(selectedGenre: string) {
+    genre.value = selectedGenre;
+    console.log("setting genre", selectedGenre);
+    // if (movies.value.query) {
+    //   fetchMoviesBySearch(movies.value.query);
+    // }
+  }
+
   async function fetchMoviesBySearch(query: string, limit = 20, page = 1) {
     loading.value = true;
     try {
       const { results, totalMatches, paginationKey } = await searchMovies(
         query,
         limit,
-        page
+        page,
+        genre.value
       );
       movies.value = {
         query,
@@ -69,7 +96,10 @@ export const useMoviesStore = defineStore("movies", () => {
     movies,
     movieDetails,
     loading,
+    genres,
+    genre,
     clearMovies,
+    setGenre,
     resetMovieDetails,
     fetchMoviesBySearch,
     fetchMovieDetails,
