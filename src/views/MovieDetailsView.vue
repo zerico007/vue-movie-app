@@ -4,6 +4,7 @@ import { onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useMoviesStore } from "../stores";
 import Button from "../components/ButtonComponent.vue";
+import RatingsBar from "../components/RatingsBar.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -36,17 +37,19 @@ function returnHome() {
       <div class="movie-details-container__info">
         <h1>{{ moviesStore.movieDetails?.title.title }}</h1>
         <p>Year: {{ moviesStore.movieDetails?.title.year }}</p>
-        <p>
+        <p v-if="moviesStore.movieDetails?.title.runningTimeInMinutes">
           Runtime:
           {{ moviesStore.movieDetails?.title.runningTimeInMinutes }} minutes
         </p>
-        <p>Plot: {{ moviesStore.movieDetails?.plotOutline?.text }}</p>
+        <p v-if="moviesStore.movieDetails?.plotOutline?.text">
+          Plot: {{ moviesStore.movieDetails?.plotOutline?.text }}
+        </p>
         <ul class="genres">
           <li v-for="genre in moviesStore.movieDetails?.genres" :key="genre">
             {{ genre }}
           </li>
         </ul>
-        <p>Rating: {{ moviesStore.movieDetails.ratings.rating }}</p>
+        <RatingsBar :rating="moviesStore.movieDetails?.ratings?.rating" />
       </div>
     </div>
   </div>
