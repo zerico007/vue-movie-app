@@ -72,6 +72,7 @@ const lightThemeHeadlineStyles = {
 .select-container {
   width: 200px;
   margin: 0 10px;
+  border-radius: 0.25rem;
   background-color: var(--color-background-soft);
 
   --vs-controls-color: var(--color-text);
@@ -93,7 +94,12 @@ const lightThemeHeadlineStyles = {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+  .select-container {
+    width: 90%;
+    height: 50px;
+    padding: 8px 5px;
+  }
   .home-container {
     .headline,
     .headline span {
