@@ -83,7 +83,8 @@ const lightThemeHeadlineStyles = {
 
 @media (max-width: 768px) {
   .home-container {
-    .headline {
+    .headline,
+    .headline span {
       font-size: 56px;
     }
     .tagline {
@@ -94,7 +95,8 @@ const lightThemeHeadlineStyles = {
 
 @media (max-width: 400px) {
   .home-container {
-    .headline {
+    .headline,
+    .headline span {
       font-size: 36px;
     }
     .tagline {
