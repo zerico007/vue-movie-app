@@ -80,6 +80,7 @@ const lightThemeHeadlineStyles = {
   --vs-dropdown-option-color: var(--color-text);
   --vs-dropdown-bg: var(--color-background-soft);
   --vs-dropdown-option--active-bg: var(--main-green);
+  --vs-border-color: none;
 }
 
 @media (max-width: 768px) {
@@ -98,7 +99,7 @@ const lightThemeHeadlineStyles = {
   .select-container {
     width: 90%;
     height: 50px;
-    padding: 8px 5px;
+    padding: 8px;
   }
   .home-container {
     .headline,
