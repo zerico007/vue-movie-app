@@ -11,7 +11,7 @@
     "build-only": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "push": "git push && yarn deploy",
+    "update": "git push && yarn deploy",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },

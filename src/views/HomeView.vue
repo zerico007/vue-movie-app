@@ -40,6 +40,11 @@ const lightThemeHeadlineStyles = {
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-image: url("../assets/movie-night.svg");
+  background-position: 50% 80%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   .headline,
   .headline span {
@@ -85,6 +90,7 @@ const lightThemeHeadlineStyles = {
 
 @media (max-width: 768px) {
   .home-container {
+    background-size: 70%;
     .headline,
     .headline span {
       font-size: 56px;
